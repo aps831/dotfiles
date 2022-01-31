@@ -1,0 +1,14 @@
+[user]
+	name = Andrew Spratley
+	email = aps831@yahoo.co.uk
+[core]
+	excludesfile = /home/andrew/.gitignore
+	autocrlf = input
+[push]
+	default = simple
+[pull]
+	rebase = false
+[diff "sopsdiffer"]
+	textconv = sops -d
+[init]
+	defaultBranch = master

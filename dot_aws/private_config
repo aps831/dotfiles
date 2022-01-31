@@ -1,0 +1,32 @@
+[default]
+region=eu-west-2
+output=json
+
+[profile andrew-p-spratley]
+region=eu-west-2
+output=json
+credential_process=aws-vault exec andrew-p-spratley --json
+mfa_serial=arn:aws:iam::961079988024:mfa/andrew
+
+[profile spratleyap]
+region=eu-west-2
+output=json
+credential_process=aws-vault exec spratleyap --json
+mfa_serial=arn:aws:iam::262292453497:mfa/andrew
+
+[profile aps831]
+region=eu-west-2
+output=json
+credential_process=aws-vault exec aps831 --json
+mfa_serial=arn:aws:iam::662317136895:mfa/andrew
+
+[profile operations-reports-831]
+region=eu-west-2
+output=json
+credential_process=aws-vault exec operations-reports-831 --json
+mfa_serial=arn:aws:iam::899431680067:mfa/andrew
+
+[profile localstack]
+region=eu-west-2
+output=json
+

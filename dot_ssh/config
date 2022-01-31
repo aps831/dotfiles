@@ -1,0 +1,35 @@
+Host thor.local
+  User andrew
+  IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_6484963
+  IdentitiesOnly yes
+
+Host thor
+  User andrew
+  IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_6484963
+  IdentitiesOnly yes
+
+Host titan.local
+  User git
+  IdentityFile ~/.ssh/andrew_on_titan_for_gogs_using_sk_6484963
+  IdentitiesOnly yes
+
+Host odin.local
+  User backup
+  IdentityFile ~/.ssh/andrew_on_titan_for_backup_on_odin
+  IdentitiesOnly yes
+  Port 10022
+
+Host odin
+  User backup
+  IdentityFile ~/.ssh/andrew_on_titan_for_backup_on_odin
+  IdentitiesOnly yes
+  Port 10022
+
+Host bitbucket.org
+  IdentityFile ~/.ssh/andrew_on_titan_for_bitbucket
+  IdentitiesOnly yes
+
+Host github.com
+  IdentityFile ~/.ssh/andrew_on_titan_for_github_using_sk_6484963
+  IdentitiesOnly yes
+
