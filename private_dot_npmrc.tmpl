@@ -1,3 +1,2 @@
-{{- $token := include "/tmp/chezmoi/npm_token" -}}
 @aps:registry=http://titan.local:18181/repository/npmjs-local/
-//titan.local:18181/repository/npmjs-local/:_authToken=NpmToken.{{ $token }}
+//titan.local:18181/repository/npmjs-local/:_authToken=NpmToken.{{ output (printf "%s%s" .chezmoi.sourceDir "/npm_token.sh") }}
