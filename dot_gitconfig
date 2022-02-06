@@ -2,7 +2,7 @@
 	name = Andrew Spratley
 	email = aps831@yahoo.co.uk
 [core]
-	excludesfile = /home/andrew/.gitignore
+	excludesfile = ~/.gitignore
 	autocrlf = input
 [push]
 	default = simple

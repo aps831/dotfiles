@@ -163,3 +163,23 @@ local.properties
 # Built Visual Studio Code Extensions
 *.vsix
 
+#
+# Ansible
+#
+# https://github.com/github/gitignore/blob/main/Global/Ansible.gitignore
+#
+*.retry
+
+
+#
+# Vagrant
+#
+# https://github.com/github/gitignore/blob/main/Global/Vagrant.gitignore
+#
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
+
+
