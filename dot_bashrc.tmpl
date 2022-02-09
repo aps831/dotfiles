@@ -105,9 +105,7 @@ fi
 export EDITOR=xed
 export VISUAL=nano
 
-# Add scripts and local bin directory to PATH
-export PATH=$PATH:$HOME/scripts:$HOME/.local/bin
-
+{{ if (and (not .devcontainers) (not .codespaces)) }}
 # Virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -137,5 +135,9 @@ fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+{{- end -}}
+
+
 
 
