@@ -26,11 +26,19 @@ sso_role_name=AdministratorAccess
 region=eu-west-2
 output=json
 
-[profile operations-reports-831]
+[profile operations-reports-831-admin]
 sso_start_url=https://spratters.awsapps.com/start/
 sso_region=eu-west-2
 sso_account_id=899431680067
 sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
+
+[profile operations-reports-831-deploy]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id=899431680067
+sso_role_name=OperationsReportsDeployment
 region=eu-west-2
 output=json
 
