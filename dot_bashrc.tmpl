@@ -105,7 +105,12 @@ fi
 export EDITOR=xed
 export VISUAL=nano
 
-{{ if (and (not .devcontainers) (not .codespaces)) }}
+{{ if .devcontainers }}
+
+# Github user and token
+[ -s "$HOME/.devcontainers.env" ] && export $(grep -v '^#' "$HOME/.devcontainers.env" | xargs)
+
+{{ else if (and (not .devcontainers) (not .codespaces)) }}
 # Virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 

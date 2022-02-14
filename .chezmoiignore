@@ -6,10 +6,12 @@ install.sh
 .gnupg
 .ngrok2
 .gradle
-.m2
+.m2/security-settings.xml
 .pip
 .rustup
 .ssh
 .gitconfig
 .npmrc
+{{ else }}
+.local/bin/install-github-token.sh
 {{- end -}}
