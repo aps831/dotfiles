@@ -2,14 +2,14 @@ README.md
 npm_token.sh
 install.sh
 {{- if (or .devcontainers .codespaces) -}}
-.docker
-.gnupg
-.ngrok2
-.gradle
+.docker/
+.gnupg/
+.ngrok2/
+.gradle/
 .m2/security-settings.xml
-.pip
-.rustup
-.ssh
+.pip/
+.rustup/
+.ssh/
 .gitconfig
 .npmrc
 {{- else -}}
