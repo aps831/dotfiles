@@ -85,8 +85,8 @@ fabric.properties
 #
 .metadata
 bin/
-!.local/bin
-!private_dot_local/bin/*
+!.local/bin/
+!private_dot_local/bin/
 tmp/
 *.tmp
 *.bak
