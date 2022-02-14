@@ -12,6 +12,6 @@ install.sh
 .ssh
 .gitconfig
 .npmrc
-{{ else }}
+{{- else -}}
 .local/bin/install-github-token.sh
 {{- end -}}
