@@ -50,19 +50,19 @@
         <server>
             <id>releases</id>
             <username>deployment</username>
-            <password>{NKJg3tFBpL8HUdBy2NzaYcaAk9fQvXf4XDc+x+pZLbpjx5dKAzxWOnJDaR5PiS9f4tpS9levXw+PdIoEJxW4cA==}</password>
+            <password>{{- output (printf "%s%s" .chezmoi.sourceDir "/dot_m2/maven_encrypt_password.sh") -}}</password>
         </server>
         <server>
             <id>snapshots</id>
             <username>deployment</username>
-            <password>{NKJg3tFBpL8HUdBy2NzaYcaAk9fQvXf4XDc+x+pZLbpjx5dKAzxWOnJDaR5PiS9f4tpS9levXw+PdIoEJxW4cA==}</password>
+            <password>{{- output (printf "%s%s" .chezmoi.sourceDir "/dot_m2/maven_encrypt_password.sh") -}}</password>
         </server>
         <server>
             <id>docker</id>
             <username>deployment</username>
-            <password>{NKJg3tFBpL8HUdBy2NzaYcaAk9fQvXf4XDc+x+pZLbpjx5dKAzxWOnJDaR5PiS9f4tpS9levXw+PdIoEJxW4cA==}</password>
+            <password>{{- output (printf "%s%s" .chezmoi.sourceDir "/dot_m2/maven_encrypt_password.sh") -}}</password>
             <configuration>
-              <email>aps831@yahoo.co.uk</email>
+              <email>{{- pass "titan.local/nexus3/deployment/email" -}}</email>
             </configuration>
         </server>
     </servers>
