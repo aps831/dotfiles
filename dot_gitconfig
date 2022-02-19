@@ -12,3 +12,5 @@
 	textconv = sops -d
 [init]
 	defaultBranch = master
+[alias]
+    slog = log --graph --decorate --pretty=oneline --abbrev-commit
