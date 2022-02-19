@@ -7,7 +7,7 @@ install.sh
 .gnupg/
 .ngrok2/
 .gradle/
-.m2/security-settings.xml
+.m2/
 .pip/
 .rustup/
 .ssh/
