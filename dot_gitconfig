@@ -14,3 +14,4 @@
 	defaultBranch = master
 [alias]
     slog = log --graph --decorate --pretty=oneline --abbrev-commit
+    ca = !git add -A && git commit -v
