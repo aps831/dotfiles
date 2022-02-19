@@ -105,6 +105,15 @@ fi
 export EDITOR=xed
 export VISUAL=nano
 
+# Alias git
+g() {
+  if [[ $# == '0' ]]; then
+    command git status -sb
+  else
+    command git "$@";
+  fi
+}
+
 {{ if .devcontainers }}
 
 # Github user and token
