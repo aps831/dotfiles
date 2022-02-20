@@ -15,4 +15,5 @@ install.sh
 .npmrc
 {{- else }}
 .local/bin/install-github-token.sh
+.local/bin/install-aws-cli.sh
 {{- end }}
