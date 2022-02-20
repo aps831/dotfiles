@@ -26,6 +26,7 @@ else
     /usr/bin/printf "\u2714 GITHUB_TOKEN environment variable set\n"
 fi
 
+echo "Open a new terminal for the changes to take effect"
 
 
 
