@@ -15,3 +15,4 @@
 [alias]
     slog = log --graph --decorate --pretty=oneline --abbrev-commit
     ca = !git add -A && git commit -v
+    caz = !git add -A && git cz
