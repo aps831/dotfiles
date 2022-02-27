@@ -121,7 +121,7 @@ g() {
 
 {{ else if (and (not .devcontainers) (not .codespaces)) }}
 # Virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 
 # tfenv
 if [ -d "$HOME/.tfenv/bin" ] ; then
