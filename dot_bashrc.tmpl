@@ -123,6 +123,11 @@ g() {
 # Virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
+# tfenv
+if [ -d "$HOME/.tfenv/bin" ] ; then
+    PATH="$HOME/.tfenv/bin:$PATH"
+fi
+
 # nvm
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -t __init_nvm)" = function ]; then
   
