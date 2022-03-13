@@ -10,6 +10,7 @@ install.sh
 .m2/
 .pip/
 .rustup/
+.sdkman/
 .ssh/
 .gitconfig
 .npmrc
