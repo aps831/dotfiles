@@ -101,10 +101,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Set Editor to gedit
-export EDITOR=xed
-export VISUAL=nano
-
 # Alias git
 g() {
   if [[ $# == '0' ]]; then
@@ -116,10 +112,19 @@ g() {
 
 {{ if .devcontainers }}
 
+# Set Editor
+export EDITOR=nano
+export VISUAL=nano
+
 # Github user and token
 [ -s "$HOME/.devcontainers.env" ] && export $(grep -v '^#' "$HOME/.devcontainers.env" | xargs)
 
 {{ else if (and (not .devcontainers) (not .codespaces)) }}
+
+# Set Editor
+export EDITOR=xed
+export VISUAL=nano
+
 # Virtualenvs
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 
