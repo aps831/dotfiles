@@ -129,9 +129,6 @@ export VISUAL=nano
 export GOPATH=$HOME/.go
 PATH=$PATH:$GOPATH/bin
 
-# Virtualenvs
-[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
-
 # tfenv
 if [ -d "$HOME/.tfenv/bin" ] ; then
     PATH="$HOME/.tfenv/bin:$PATH"
@@ -161,7 +158,14 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -t __init_nvm)" = function ]; then
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# sdkman
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 {{- end -}}
