@@ -111,7 +111,9 @@ g() {
 }
 
 # Source user profiles
-for f in ~/.profile.d/*; do source $f; done
+if [ -d ~/.profile.d ]; then
+  for f in ~/.profile.d/*; do source $f; done
+fi
 
 {{ if .devcontainers }}
 # Set Editor
