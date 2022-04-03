@@ -110,68 +110,16 @@ g() {
   fi
 }
 
-{{ if .devcontainers }}
+# Source user profiles
+for f in ~/.profile.d/*; do source $f; done
 
+{{ if .devcontainers }}
 # Set Editor
 export EDITOR=nano
 export VISUAL=nano
-
-# Github user and token
-[ -s "$HOME/.devcontainers.env" ] && export $(grep -v '^#' "$HOME/.devcontainers.env" | xargs)
-
 {{ else if (and (not .devcontainers) (not .codespaces)) }}
-
 # Set Editor
 export EDITOR=xed
 export VISUAL=nano
-
-# Go
-export GOPATH=$HOME/.go
-PATH=$PATH:$GOPATH/bin
-
-# tfenv
-if [ -d "$HOME/.tfenv/bin" ] ; then
-    PATH="$HOME/.tfenv/bin:$PATH"
-fi
-
-# nvm
-if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -t __init_nvm)" = function ]; then
-  
-  # NVM doesn't like the symbolic link from /home
-  export NVM_DIR=$( readlink -f $HOME/.nvm/ )
-  
-  # Bash completion
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  
-  # Define commands
-  declare -a __node_commands=('nvm' 'node' 'npm' 'npx' 'yarn' 'gulp' 'grunt' 'webpack' 'git')
-
-  # Definie initialisation function
-  function __init_nvm() {
-    for i in "${__node_commands[@]}"; do unalias $i; done
-    . "$NVM_DIR"/nvm.sh
-    unset __node_commands
-    unset -f __init_nvm
-  }
-
-  # Alias commands to initialisation function 
-  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
-fi
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-PATH="$PYENV_ROOT/bin:$PATH"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# rust
-export RUSTUP_HOME=~/.rustup
-export CARGO_HOME=~/.cargo
-PATH=$PATH:$CARGO_HOME/bin
-
-# sdkman
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 {{- end -}}
 
