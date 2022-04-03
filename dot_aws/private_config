@@ -9,30 +9,40 @@ sso_start_url=https://spratters.awsapps.com/start/
 sso_region=eu-west-2
 sso_account_id=961079988024
 sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
 
 [profile spratleyap]
 sso_start_url=https://spratters.awsapps.com/start/
 sso_region=eu-west-2
 sso_account_id=262292453497
 sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
 
 [profile aps831]
 sso_start_url=https://spratters.awsapps.com/start/
 sso_region=eu-west-2
 sso_account_id=662317136895
 sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
 
 [profile operations-reports-831-admin]
 sso_start_url=https://spratters.awsapps.com/start/
 sso_region=eu-west-2
 sso_account_id=899431680067
 sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
 
 [profile operations-reports-831-deploy]
 sso_start_url=https://spratters.awsapps.com/start/
 sso_region=eu-west-2
 sso_account_id=899431680067
 sso_role_name=OperationsReportsDeployment
+region=eu-west-2
+output=json
 
 [profile localstack]
 region=eu-west-2
