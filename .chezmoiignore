@@ -15,6 +15,6 @@ install.sh
 .gitconfig
 .npmrc
 {{- else }}
-.local/bin/install-github-token.sh
-.local/bin/install-aws-cli.sh
+.local/bin/install-github-token
+.local/bin/install-aws-cli
 {{- end }}
