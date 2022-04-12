@@ -13,15 +13,15 @@
 	rebase = false
 [delta]
     navigate = true  # use n and N to move between diff sections
+    side-by-side = true
 [diff "sopsdiffer"]
 	textconv = sops -d
+[diff]
+    colorMoved = default
 [init]
 	defaultBranch = master
 [merge]
     conflictstyle = diff3
-
-[diff]
-    colorMoved = default
 [alias]
     slog = log --graph --decorate --pretty=oneline --abbrev-commit
     ca = !git add -A && git commit -v
