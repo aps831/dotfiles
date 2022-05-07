@@ -111,8 +111,17 @@ g() {
 }
 
 # Source user profiles
-if [ -d ~/.profile.d ]; then
-  for f in ~/.profile.d/*; do source $f; done
+if [ -d $HOME/.profile.d ]; then
+  for f in $HOME/.profile.d/*.sh
+   do
+     start=$(date +%s.%N)
+     source $f
+     threshold=1
+     dur=$(echo "$(date +%s.%N) - $start" | bc)
+     if (( $(echo "$dur > $threshold" | bc -l) )); then
+       printf "(Sourcing $f added %.6f seconds to the loading time)\n" $dur     
+     fi
+  done
 fi
 
 {{ if .devcontainers }}
