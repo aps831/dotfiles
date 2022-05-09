@@ -115,11 +115,13 @@ if [ -d $HOME/.profile.d ]; then
   for f in $HOME/.profile.d/*.sh
    do
      start=$(date +%s.%N)
+     # sdkman does something odd when sourcing
+     ff="$f"
      source $f
      threshold=1
      dur=$(echo "$(date +%s.%N) - $start" | bc)
      if (( $(echo "$dur > $threshold" | bc -l) )); then
-       printf "(Sourcing $f added %.6f seconds to the loading time)\n" $dur     
+       printf "(Sourcing $ff added %.3f seconds to the loading time)\n" $dur     
      fi
   done
 fi
