@@ -8,6 +8,14 @@ elif [[ -f "package.json" ]]; then
 
     npm audit
 
+elif [[ -f "go.mod" ]]; then
+
+    echo "Not implemented yet!"
+
+elif [[ -f "pyproject.toml" ]]; then
+
+    echo "Not implemented yet!"
+
 else
 
     echo "No package file found"
