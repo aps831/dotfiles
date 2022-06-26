@@ -8,7 +8,6 @@ install.sh
 .ngrok2/
 .gradle/
 .m2/
-.pip/
 .rustup/
 .sdkman/
 .ssh/
