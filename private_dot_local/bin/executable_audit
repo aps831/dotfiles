@@ -14,7 +14,7 @@ elif [[ -f "go.mod" ]]; then
 
 elif [[ -f "pyproject.toml" ]]; then
 
-    echo "Not implemented yet!"
+    safety check
 
 else
 
