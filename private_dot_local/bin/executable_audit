@@ -10,7 +10,7 @@ elif [[ -f "package.json" ]]; then
 
 elif [[ -f "go.mod" ]]; then
 
-    echo "Not implemented yet!"
+    go list -json -m all | nancy sleuth
 
 elif [[ -f "pyproject.toml" ]]; then
 
