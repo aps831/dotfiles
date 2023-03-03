@@ -1,0 +1,7 @@
+<settingsSecurity>
+  {{ if (eq .chezmoi.hostname "thor") }}
+  <master>{{- output "mvn" "--encrypt-master-password" (pass "thor.local/maven/masterpassword") -}}</master>
+  {{ else if (eq .chezmoi.hostname "titan") }}
+  <master>{{- output "mvn" "--encrypt-master-password" (pass "titan.local/maven/masterpassword") -}}</master>
+  {{ end }}
+</settingsSecurity>

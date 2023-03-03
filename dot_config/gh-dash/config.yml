@@ -1,0 +1,100 @@
+prSections:
+- title: My Pull Requests
+  filters: is:open author:@me
+- title: Needs My Review
+  filters: is:open review-requested:@me
+- title: Involved
+  filters: is:open involves:@me -author:@me
+issuesSections:
+- title: My Issues
+  filters: is:open author:@me
+- title: Assigned
+  filters: is:open assignee:@me
+- title: Involved
+  filters: is:open involves:@me -author:@me
+defaults:
+  preview:
+    open: true
+    width: 50
+  prsLimit: 20
+  issuesLimit: 20
+  view: prs
+  layout:
+    prs:
+      updatedAt:
+        width: 7
+      repo:
+        width: 15
+      author:
+        width: 15
+      lines:
+        width: 16
+    issues:
+      updatedAt:
+        width: 7
+      repo:
+        width: 15
+      creator:
+        width: 10
+      assignees:
+        width: 20
+  refetchIntervalMinutes: 30
+keybindings:
+  prs: []
+repoPaths:
+  # the syntax dlvhdr/*: ~/code/repos/* isn't working
+  aps831/aws-andrew-p-spratley-gmail-com: ~/aws-andrew-p-spratley-gmail-com
+  aps831/aws-aps831-yahoo-co-uk: ~/aws-aps831-yahoo-co-uk
+  aps831/aws-operations-reports-831-gmail-com: ~/aws-operations-reports-831-gmail-com
+  aps831/aws-spratleyap-gmail-com: ~/aws-spratleyap-gmail-com
+  aps831/backblaze: ~/backblaze
+  aps831/basic-template: ~/basic-template
+  aps831/cif-json-import: ~/cif-json-import
+  aps831/cif-vpt-comparison: ~/cif-vpt-comparison
+  aps831/cloudflare-spratters-uk: ~/cloudflare-spratters-uk
+  aps831/ddlog-java-client: ~/ddlog-java-client
+  aps831/ddlog-java-wrapper: ~/ddlog-java-wrapper
+  aps831/devcontainers: ~/devcontainers
+  aps831/devcontainers-features: ~/devcontainers-features
+  aps831/diagram-exchange: ~/diagram-exchange
+  aps831/diagrammed-trains: ~/diagrammed-trains
+  aps831/diagram-reader: ~/diagram-reader
+  aps831/domain-andrewspratley-co-uk: ~/domain-andrewspratley-co-uk
+  aps831/gcp-andrew-p-spratley-gmail-com: ~/gcp-andrew-p-spratley-gmail-com
+  aps831/go-cloudshell-test: ~/go-cloudshell-test
+  aps831/go-cobra-test: ~/go-cobra-test
+  aps831/go-tview-test: ~/go-tview-test
+  aps831/hidden_reporting: ~/hidden_reporting
+  aps831/k8s-cluster-DELETE: ~/k8s-cluster-DELETE
+  downslow2fast/k8s-skeleton-app: ~/k8s-skeleton-app
+  downslow2fast/k8s-skeleton-app-admin: ~/k8s-skeleton-app-admin
+  downslow2fast/k8s-skeleton-app-terraform: ~/k8s-skeleton-app-terraform
+  aps831/maintenance-aps831: ~/maintenance-aps831
+  downslow2fast/maintenance-downslow2fast: ~/maintenance-downslow2fast
+  aps831/messagingdsl: ~/messagingdsl
+  aps831/operations-reports-backend: ~/operations-reports-backend
+  aps831/operations-reports-documentation: ~/operations-reports-documentation
+  aps831/operations-reports-frontend: ~/operations-reports-frontend
+  aps831/process: ~/process
+  aps831/recipes: ~/recipes
+  aps831/resource-management: ~/resource-management
+  downslow2fast/schedule-alterations: ~/schedule-alterations
+  aps831/scripts: ~/scripts
+  aps831/search: ~/search
+  aps831/simplifiers: ~/simplifiers
+  aps831/skeleton-app-code: ~/skeleton-app-code
+  aps831/skeleton-app-ops-DELETE: ~/skeleton-app-ops-DELETE
+  aps831/terraform-bucket: ~/terraform-bucket
+  downslow2fast/tosca-backend: ~/tosca-backend
+  downslow2fast/tosca-dsl: ~/tosca-dsl
+  downslow2fast/tosca-frontend: ~/tosca-frontend
+  downslow2fast/tosca-model: ~/tosca-model
+  aps831/trunk-io-plugins: ~/trunk-io-plugins
+  aps831/vpt-import: ~/vpt-import
+  aps831/vpt-schedule-comparison: ~/vpt-schedule-comparison
+  aps831/vpt-schedule-comparison-test: ~/vpt-schedule-comparison-test
+  aps831/wicc: ~/wicc
+  aps831/workflows: ~/workflows
+  aps831/workstation: ~/workstation
+pager:
+  diff: "less"

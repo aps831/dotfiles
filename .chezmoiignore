@@ -1,0 +1,14 @@
+README.md
+install.sh
+.m2/maven_encrypt_password.sh
+{{- if (or .devcontainers .codespaces) }}
+.docker/
+.gnupg/
+.ngrok2/
+.gradle/
+.m2/
+.rustup/
+.sdkman/
+.ssh/
+.gitconfig
+{{- end }}

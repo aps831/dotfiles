@@ -1,0 +1,61 @@
+{{- if eq .chezmoi.hostname "titan" -}}
+Host thor.local
+  User andrew
+  IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_6484963
+  IdentitiesOnly yes
+
+Host thor
+  User andrew
+  IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_6484963
+  IdentitiesOnly yes
+
+Host odin.local
+  User backup
+  IdentityFile ~/.ssh/andrew_on_titan_for_backup_on_odin
+  IdentitiesOnly yes
+  Port 10022
+
+Host odin
+  User backup
+  IdentityFile ~/.ssh/andrew_on_titan_for_backup_on_odin
+  IdentitiesOnly yes
+  Port 10022
+
+Host bitbucket.org
+  IdentityFile ~/.ssh/andrew_on_titan_for_bitbucket
+  IdentitiesOnly yes
+
+Host github.com
+  IdentityFile ~/.ssh/andrew_on_titan_for_github_using_sk_6484963
+  IdentitiesOnly yes
+{{- else if eq .chezmoi.hostname "thor" -}}
+Host titan.local
+  User andrew
+  IdentityFile ~/.ssh/andrew_on_thor_for_titan_using_sk_6484963
+  IdentitiesOnly yes
+
+Host titan
+  User andrew
+  IdentityFile ~/.ssh/andrew_on_thor_for_titan_using_sk_6484963
+  IdentitiesOnly yes
+
+Host odin.local
+  User backup
+  IdentityFile ~/.ssh/andrew_on_thor_for_backup_on_odin
+  IdentitiesOnly yes
+  Port 10022
+
+Host odin
+  User backup
+  IdentityFile ~/.ssh/andrew_on_thor_for_backup_on_odin
+  IdentitiesOnly yes
+  Port 10022
+
+Host bitbucket.org
+  IdentityFile ~/.ssh/andrew_on_thor_for_bitbucket
+  IdentitiesOnly yes
+
+Host github.com
+  IdentityFile ~/.ssh/andrew_on_thor_for_github_using_sk_6484963
+  IdentitiesOnly yes
+{{- end -}}

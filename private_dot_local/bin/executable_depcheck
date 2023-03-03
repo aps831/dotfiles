@@ -1,0 +1,24 @@
+#! /bin/bash
+
+if [[ -f "pom.xml" ]]; then
+
+    mvn versions:display-plugin-updates
+    mvn versions:display-dependency-updates
+
+elif [[ -f "package.json" ]]; then
+
+    npm outdated
+
+elif [[ -f "go.mod" ]]; then
+
+    go list -u -m all
+
+elif [[ -f "pyproject.toml" ]]; then
+
+    pip list --outdated
+
+else
+
+    echo "No package file found"
+
+fi

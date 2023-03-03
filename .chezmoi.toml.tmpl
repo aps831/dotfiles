@@ -1,0 +1,10 @@
+{{- $codespaces := env "CODESPACES" | not | not -}}
+{{- $devcontainers := env "DEVCONTAINERS" | not | not -}}
+
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+
+[data]
+    name = "Your name"
+    codespaces = {{ $codespaces }}
+    devcontainers = {{ $devcontainers }}
+

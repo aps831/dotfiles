@@ -1,0 +1,33 @@
+#! /bin/bash
+
+if [[ -f "pom.xml" ]]; then
+
+    mvn org.owasp:dependency-check-maven:check -DfailBuildOnAnyVulnerability=true
+
+    trivy fs --security-checks vuln,secret,config .
+
+elif [[ -f "package.json" ]]; then
+
+    npm audit
+
+    trivy fs --security-checks vuln,secret,config .
+
+elif [[ -f "go.mod" ]]; then
+
+    go list -json -m all | nancy sleuth
+
+    trivy fs --security-checks vuln,secret,config .
+
+elif [[ -f "pyproject.toml" ]]; then
+
+    trivy fs --security-checks vuln,secret,config .
+
+else
+
+    echo "No package file found"
+
+fi
+
+
+
+
