@@ -1,0 +1,49 @@
+#! /bin/bash
+
+PROGNAME="$(basename "$0")" 
+
+trap 'catch $?' EXIT
+catch() {
+  if [ "$1" != "0" ]; then
+    echo "An error occurred"
+    exit 1
+  fi
+}
+
+usage() {
+  if [[ $* != "" ]]; then
+    echo "Error: $*"
+  fi
+
+  cat <<EOF
+Usage: ${PROGNAME} SEARCH
+Search maven dependency tree for <SEARCH>
+EOF
+  exit 0
+}
+
+search() {
+  if [[ -f "pom.xml" ]]; then
+    mvn dependency:tree | grep "^\|${1}" --color='always'   
+  else
+    echo "No pom.xml found"
+  fi
+}
+
+if [[ $# -eq 0 ]]; then
+  usage  
+fi 
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  -h | --help)
+    usage
+    ;;
+  *)
+    search ${1}
+    ;;
+  esac
+  shift
+done
+
+
