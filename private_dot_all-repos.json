@@ -1,0 +1,14 @@
+{
+    "output_dir": "/home/andrew/.all-repos",    
+    "source": "all_repos.source.github",
+    "source_settings":  {
+        "api_key_env": "GITHUB_TOKEN",
+        "username": "aps831",
+        "private": true
+    },
+    "push": "all_repos.push.github_pull_request",
+    "push_settings": {
+        "api_key_env": "GITHUB_TOKEN",
+        "username": "aps831"
+    }
+}
