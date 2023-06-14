@@ -42,9 +42,12 @@ gc() {
   git commit
 }
 
-
 gac() {
   git add --all .
   git commit
+}
+
+gf() {
+  git fixup
 }
 
