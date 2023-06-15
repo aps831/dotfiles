@@ -10,7 +10,7 @@ elif [[ -f "package.json" ]]; then
 
     npm audit
 
-    trivy fs --scanners vuln,secret,config .
+    trivy fs --scanners vuln,secret,config --skip-dirs node_modules .
 
 elif [[ -f "go.mod" ]]; then
 
