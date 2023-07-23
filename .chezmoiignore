@@ -1,7 +1,6 @@
 README.md
 LICENCE.md
 install.sh
-.m2/maven_encrypt_password.sh
 {{- if (or .devcontainers .codespaces) }}
 .docker/
 .gnupg/
