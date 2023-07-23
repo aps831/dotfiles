@@ -8,5 +8,5 @@ if [ -z "$AGE_PRIVATE_KEY" ]; then
 else
   echo "AGE_PRIVATE_KEY is set. Writing private key to ${AGE_PRIVATE_KEY_FILE}"
   mkdir -p ${AGE_PRIVATE_KEY_DIR}
-  echo ${AGE_PRIVATE_KEY} > ${AGE_PRIVATE_KEY_FILE}
+  echo -e "${AGE_PRIVATE_KEY}" > ${AGE_PRIVATE_KEY_FILE}
 fi
