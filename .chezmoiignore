@@ -1,6 +1,7 @@
 README.md
 LICENCE.md
 install.sh
+install-age-private-key.sh
 {{- if (or .devcontainers .codespaces) }}
 .docker/
 .gnupg/
