@@ -1,0 +1,28 @@
+#! /bin/bash
+IFS=""
+MASTER_BRANCH="master"
+
+mapfile -t dirlist < <(find ${HOME} -maxdepth 2 -type d -name '.git' | sed -r 's|/[^/]+$||' |sort |uniq)
+
+for dir in ${dirlist[@]}; do
+
+    pushd "${dir}" > /dev/null 2>&1
+
+    REMOTE=$(git config --get remote.origin.url)
+
+    if [[ "${REMOTE}" =~ ^git@github.com:aps831.* || "${REMOTE}" =~ ^git@github.com:downslow2fast.* ]]; then
+
+        echo "${REMOTE}"
+        git branch
+
+    else
+
+        echo "Ignoring ${REMOTE}"        
+
+    fi
+    
+    popd > /dev/null 2>&1
+    echo "----"
+
+done
+
