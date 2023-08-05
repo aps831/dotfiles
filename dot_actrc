@@ -1,3 +1,4 @@
--P ubuntu-latest=ghcr.io/catthehacker/ubuntu:full-latest
--P ubuntu-20.04=ghcr.io/catthehacker/ubuntu:full-20.04
--P ubuntu-18.04=ghcr.io/catthehacker/ubuntu:full-18.04
+-P ubuntu-latest=node:16-buster-slim
+-P ubuntu-22.04=node:16-bullseye-slim
+-P ubuntu-20.04=node:16-buster-slim
+-P ubuntu-18.04=node:16-buster-slim
