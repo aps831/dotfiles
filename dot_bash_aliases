@@ -51,3 +51,8 @@ gf() {
   git fixup
 }
 
+gaf() {
+  git add --all .
+  git fixup
+}
+
