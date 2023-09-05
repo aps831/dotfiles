@@ -25,6 +25,11 @@ nm-reconnect() {
   echo "Reconnected network manager"
 }
 
+# Cloud logins
+alias cloud-login-aws='aws sso login'
+alias cloud-login-gcp='gcloud auth application-default login'
+alias cloud-login-gh='gh auth login'
+
 # Alias git
 g() {
   if [[ $# == '0' ]]; then
