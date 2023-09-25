@@ -29,6 +29,7 @@ nm-reconnect() {
 alias cloud-login-aws='aws sso login'
 alias cloud-login-gcp='gcloud auth application-default login'
 alias cloud-login-gh='gh auth login'
+alias cloud-login-ghcr='docker login ghcr.io -u aps831'
 
 # Alias git
 g() {
