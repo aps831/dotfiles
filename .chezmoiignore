@@ -6,7 +6,7 @@ install.sh
 .gnupg/
 .ngrok2/
 .gradle/
-.m2/
+.m2/settings-security.xml
 .rustup/
 .sdkman/
 .ssh/
