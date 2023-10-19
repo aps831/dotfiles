@@ -11,4 +11,5 @@ install.sh
 .sdkman/
 .ssh/
 .gitconfig
+.all-repos.json
 {{- end }}
