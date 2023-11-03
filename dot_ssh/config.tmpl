@@ -1,12 +1,12 @@
 {{- if eq .chezmoi.hostname "titan" -}}
 Host thor.local
   User andrew
-  IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_6484963
+  IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_6950214
   IdentitiesOnly yes
 
 Host thor
   User andrew
-  IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_6484963
+  IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_6950214
   IdentitiesOnly yes
 
 Host odin.local
@@ -26,17 +26,17 @@ Host bitbucket.org
   IdentitiesOnly yes
 
 Host github.com
-  IdentityFile ~/.ssh/andrew_on_titan_for_github_using_sk_6484963
+  IdentityFile ~/.ssh/andrew_on_titan_for_github_using_sk_6950214
   IdentitiesOnly yes
 {{- else if eq .chezmoi.hostname "thor" -}}
 Host titan.local
   User andrew
-  IdentityFile ~/.ssh/andrew_on_thor_for_titan_using_sk_6484963
+  IdentityFile ~/.ssh/andrew_on_thor_for_titan_using_sk_6950214
   IdentitiesOnly yes
 
 Host titan
   User andrew
-  IdentityFile ~/.ssh/andrew_on_thor_for_titan_using_sk_6484963
+  IdentityFile ~/.ssh/andrew_on_thor_for_titan_using_sk_6950214
   IdentitiesOnly yes
 
 Host odin.local
@@ -56,6 +56,6 @@ Host bitbucket.org
   IdentitiesOnly yes
 
 Host github.com
-  IdentityFile ~/.ssh/andrew_on_thor_for_github_using_sk_6484963
+  IdentityFile ~/.ssh/andrew_on_thor_for_github_using_sk_6950214
   IdentitiesOnly yes
 {{- end -}}
