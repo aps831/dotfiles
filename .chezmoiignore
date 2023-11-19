@@ -2,6 +2,16 @@ README.md
 LICENCE.md
 install.sh
 {{- if (or .devcontainers .codespaces) }}
+.config/brasero/application-settings 
+.config/BreakTimer/config.json 
+.config/BreakTimer/Preferences 
+.config/Code/Preferences 
+.config/gh/hosts.yml 
+.config/helm/repositories.yaml 
+.config/Postman/Preferences
+.config/sound-juicer/saved-state 
+.config/Yubico/YKPersonalization.conf 
+.config/Yubico/Yubico Authenticator.conf
 .docker/
 .gnupg/
 .ngrok2/
