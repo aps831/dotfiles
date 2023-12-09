@@ -1,3 +1,5 @@
 github.com:
     user: aps831
     git_protocol: ssh
+    users:
+        aps831:
