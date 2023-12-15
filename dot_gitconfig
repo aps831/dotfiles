@@ -21,6 +21,7 @@
 	textconv = sops -d
 [diff]
 	colorMoved = default
+	algorithm = histogram
 [init]
 	defaultBranch = master
 [merge]
