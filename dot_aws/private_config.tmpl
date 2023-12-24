@@ -1,0 +1,138 @@
+[default]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+region=eu-west-2
+output=json
+
+[profile andrew-p-spratley-admin]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_ANDREW_P_SPRATLEY" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
+
+[profile andrew-p-spratley-power]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_ANDREW_P_SPRATLEY" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=PowerUserAccess
+region=eu-west-2
+output=json
+
+[profile andrew-p-spratley-account-analysis]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_ANDREW_P_SPRATLEY" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=AccountAnalysisAccess
+region=eu-west-2
+output=json
+
+[profile andrew-p-spratley-driftctl]
+source_profile=andrew-p-spratley-account-analysis
+role_arn=arn:aws:iam::{{ doppler "AWS_ACCOUNT_ID_ANDREW_P_SPRATLEY" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}:role/DriftctlRole
+
+[profile spratleyap-admin]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_SPRATLEY_AP" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
+
+[profile spratleyap-power]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_SPRATLEY_AP" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=PowerUserAccess
+region=eu-west-2
+output=json
+
+[profile spratleyap-account-analysis]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_SPRATLEY_AP" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=AccountAnalysisAccess
+region=eu-west-2
+output=json
+
+[profile spratleyap-driftctl]
+source_profile=spratleyap-account-analysis
+role_arn=arn:aws:iam::{{ doppler "AWS_ACCOUNT_ID_SPRATLEY_AP" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}:role/DriftctlRole
+
+[profile aps831-admin]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_APS831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
+
+[profile aps831-power]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_APS831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=PowerUserAccess
+region=eu-west-2
+output=json
+
+[profile aps831-account-analysis]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_APS831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=AccountAnalysisAccess
+region=eu-west-2
+output=json
+
+[profile aps831-driftctl]
+source_profile=aps831-account-analysis
+role_arn=arn:aws:iam::{{ doppler "AWS_ACCOUNT_ID_APS831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}:role/DriftctlRole
+
+[profile operations-reports-831-admin]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_OPERATIONS_REPORTS_831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=AdministratorAccess
+region=eu-west-2
+output=json
+
+[profile operations-reports-831-power]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_OPERATIONS_REPORTS_831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=PowerUserAccess
+region=eu-west-2
+output=json
+
+[profile operations-reports-831-deployment]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_OPERATIONS_REPORTS_831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=OperationsReportsDeployment
+region=eu-west-2
+output=json
+
+[profile operations-reports-831-backend-deployment]
+source_profile=operations-reports-831-deployment
+role_arn=arn:aws:iam::{{ doppler "AWS_ACCOUNT_ID_OPERATIONS_REPORTS_831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}:role/OperationsReportsBackendDeploymentRole
+
+[profile operations-reports-831-frontend-deployment]
+source_profile=operations-reports-831-deployment
+role_arn=arn:aws:iam::{{ doppler "AWS_ACCOUNT_ID_OPERATIONS_REPORTS_831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}:role/OperationsReportsFrontendDeploymentRole
+
+[profile operations-reports-831-account-analysis]
+sso_start_url=https://spratters.awsapps.com/start/
+sso_region=eu-west-2
+sso_account_id={{ doppler "AWS_ACCOUNT_ID_OPERATIONS_REPORTS_831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}
+sso_role_name=AccountAnalysisAccess
+region=eu-west-2
+output=json
+
+[profile operations-reports-831-driftctl]
+source_profile=operations-reports-831-account-analysis
+role_arn=arn:aws:iam::{{ doppler "AWS_ACCOUNT_ID_OPERATIONS_REPORTS_831" (expandenv "$DOPPLER_PROJECT") (expandenv "$DOPPLER_CONFIG") }}:role/DriftctlRole
+
+[profile localstack]
+region=eu-west-2
+output=json
+

@@ -17,5 +17,23 @@ else
   chezmoi=chezmoi
 fi
 
+export DOPPLER_PROJECT=development
+echo "Set DOPPLER_PROJECT=$DOPPLER_PROJECT"
+
+if [ -z "$CODESPACES" ]; then
+  export DOPPLER_CONFIG=codespaces
+else
+  export DOPPLER_CONFIG=$(hostname)
+fi
+echo "Set DOPPLER_CONFIG=$DOPPLER_CONFIG"
+
+if [ -z "$DOPPLER_DOTFILES_TOKEN" ]; then
+  echo "Set DOPPLER_TOKEN from CLI authentication"    
+  export DOPPLER_TOKEN=$(doppler configure --json | yq '.. | select(has("token"))' | yq '.token')
+else
+  echo "Set DOPPLER_TOKEN from environment"  
+  export DOPPLER_TOKEN=$DOPPLER_DOTFILES_TOKEN
+fi
+
 script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
 exec "$chezmoi" init --apply "--source=$script_dir"
