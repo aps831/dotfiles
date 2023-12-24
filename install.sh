@@ -21,9 +21,9 @@ export DOPPLER_PROJECT=development
 echo "Set DOPPLER_PROJECT=$DOPPLER_PROJECT"
 
 if [ -z "$CODESPACES" ]; then
-  export DOPPLER_CONFIG=codespaces
-else
   export DOPPLER_CONFIG=$(hostname)
+else
+  export DOPPLER_CONFIG=codespaces
 fi
 echo "Set DOPPLER_CONFIG=$DOPPLER_CONFIG"
 
