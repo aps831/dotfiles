@@ -18,21 +18,11 @@ else
 fi
 
 export DOPPLER_PROJECT=development
-echo "Set DOPPLER_PROJECT=$DOPPLER_PROJECT"
-
-if [ -z "$CODESPACES" ]; then
-  export DOPPLER_CONFIG=$(hostname)
-else
-  export DOPPLER_CONFIG=codespaces
-fi
-echo "Set DOPPLER_CONFIG=$DOPPLER_CONFIG"
-
-if [ -z "$DOPPLER_DOTFILES_TOKEN" ]; then
-  echo "Set DOPPLER_TOKEN from CLI authentication"    
-  export DOPPLER_TOKEN=$(doppler configure --json | yq '.. | select(has("token"))' | yq '.token')
-else
-  echo "Set DOPPLER_TOKEN from environment"  
-  export DOPPLER_TOKEN=$DOPPLER_DOTFILES_TOKEN
+[ -z "$CODESPACES" ] && export DOPPLER_CONFIG=$(hostname) || export DOPPLER_CONFIG=codespaces
+export DOPPLER_TOKEN=${DOPPLER_DEVELOPMENT_CODESPACES_TOKEN:=$(doppler configure --json | yq '.. | select(has("token"))' | yq '.token')}
+if [ ${DOPPLER_TOKEN} = "null" ]; then
+  echo "Unable to obtain Doppler token from CLI authentication.  Exiting"
+  exit    
 fi
 
 script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
