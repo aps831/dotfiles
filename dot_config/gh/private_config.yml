@@ -11,6 +11,7 @@ aliases:
     pr-checkout: '!id="$(gh pr list -L100 | fzf | cut -f1)"; [ -n "$id" ] && gh pr checkout "$id"'
     pr-close-stale: '!id="$(gh pr list -L100 | fzf | cut -f1)"; [ -n "$id" ] && gh pr close "$id" -d -c "Stale"'
     pr-combine-dependabot-combine: 'combine-prs --query "author:app/dependabot -label:no_combine_prs" --skip-pr-check'
+    pr-rebase-dependabot: '!id="$(gh pr list --search "author:app/dependabot" | fzf | cut -f1)"; [ -n "$id" ] && gh pr comment "$id" -b "@dependabot rebase"'
     pr-list-dependabot: 'pr list --author app/dependabot'
     pr-list-dependabot-combine: 'pr list --search "author:app/dependabot -label:no_combine_prs"'
     pr-list-dependabot-no-combine: 'pr list --search "author:app/dependabot label:no_combine_prs"'
