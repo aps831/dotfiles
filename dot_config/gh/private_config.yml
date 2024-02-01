@@ -15,8 +15,8 @@ aliases:
     pr-list-dependabot: 'pr list --author app/dependabot'
     pr-list-dependabot-combine: 'pr list --search "author:app/dependabot -label:no_combine_prs"'
     pr-list-dependabot-no-combine: 'pr list --search "author:app/dependabot label:no_combine_prs"'
-    pr-no-combine-add-label: '!id="$(gh pr list -L100 --search "author:app/dependabot -label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --add-label "no_combine_prs"'
-    pr-no-combine-remove-label: '!id="$(gh pr list -L100 --search "author:app/dependabot label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --remove-label "no_combine_prs"'
+    pr-add-label-no-combine: '!id="$(gh pr list -L100 --search "author:app/dependabot -label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --add-label "no_combine_prs"'
+    pr-remove-label-no-combine: '!id="$(gh pr list -L100 --search "author:app/dependabot label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --remove-label "no_combine_prs"'
 
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
