@@ -10,16 +10,16 @@ pager: !!null delta -s
 aliases:
     pr-checkout: '!id="$(gh pr list -L100 | fzf | cut -f1)"; [ -n "$id" ] && gh pr checkout "$id"'
     pr-close-stale: '!id="$(gh pr list -L100 | fzf | cut -f1)"; [ -n "$id" ] && gh pr close "$id" -d -c "Stale"'
-    pr-combine-dependabot-combine: 'combine-prs --query "author:app/dependabot -label:no_combine_prs" --skip-pr-check'
+    pr-combine-dependabot: 'combine-prs --query "author:app/dependabot -label:no_combine_prs" --skip-pr-check'
     pr-rebase-dependabot-remote: '!id="$(gh pr list --search "author:app/dependabot" | fzf | cut -f1)"; [ -n "$id" ] && gh pr comment "$id" -b "@dependabot rebase"'
     pr-rebase-merge-dependabot-remote: '!id="$(gh pr list --search "author:app/dependabot" | fzf | cut -f1)"; [ -n "$id" ] && gh pr merge "$id" --rebase'
     pr-rebase-merge-dependabot-local: '!pr_branch="$(gh pr list --search "author:app/dependabot" | fzf | cut -f3)"; [ -n "$pr_branch" ] && remote=$(git remote -v | grep github.com | head -n 1 | awk ''{print $1}'') && git fetch $remote $pr_branch:$pr_branch && current_branch=$(git rev-parse --abbrev-ref HEAD) && git rebase $current_branch $pr_branch && git checkout $current_branch && git merge $pr_branch'
     pr-list-dependabot: 'pr list --author app/dependabot'
-    pr-list-dependabot-combine: 'pr list --search "author:app/dependabot -label:no_combine_prs"'
-    pr-list-dependabot-no-combine: 'pr list --search "author:app/dependabot label:no_combine_prs"'
+    pr-list-dependabot-combine-prs: 'pr list --search "author:app/dependabot -label:no_combine_prs"'
+    pr-list-dependabot-no-combine-prs: 'pr list --search "author:app/dependabot label:no_combine_prs"'
     pr-list-merge-conflicts: '!gh pr status -c | grep "Merge conflicts"'
-    pr-add-label-no-combine: '!id="$(gh pr list -L100 --search "author:app/dependabot -label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --add-label "no_combine_prs"'
-    pr-remove-label-no-combine: '!id="$(gh pr list -L100 --search "author:app/dependabot label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --remove-label "no_combine_prs"'
+    pr-add-label-no-combine-prs: '!id="$(gh pr list -L100 --search "author:app/dependabot -label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --add-label "no_combine_prs"'
+    pr-remove-label-no-combine-prs: '!id="$(gh pr list -L100 --search "author:app/dependabot label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --remove-label "no_combine_prs"'
 
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
