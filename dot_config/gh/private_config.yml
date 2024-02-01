@@ -16,6 +16,7 @@ aliases:
     pr-list-dependabot: 'pr list --author app/dependabot'
     pr-list-dependabot-combine: 'pr list --search "author:app/dependabot -label:no_combine_prs"'
     pr-list-dependabot-no-combine: 'pr list --search "author:app/dependabot label:no_combine_prs"'
+    pr-list-merge-conflicts: '!gh pr status -c | grep "Merge conflicts"'
     pr-add-label-no-combine: '!id="$(gh pr list -L100 --search "author:app/dependabot -label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --add-label "no_combine_prs"'
     pr-remove-label-no-combine: '!id="$(gh pr list -L100 --search "author:app/dependabot label:no_combine_prs" | fzf | cut -f1)"; [ -n "$id" ] && gh pr edit $id --remove-label "no_combine_prs"'
 
