@@ -63,3 +63,12 @@ gaf() {
   git fixup
 }
 
+{{ if (and (not .devcontainers) (not .codespaces)) }}
+# Chezmoi
+function chezmoi() {
+  export DOPPLER_PROJECT=development
+  export DOPPLER_CONFIG=$(hostname)
+  export DOPPLER_TOKEN=$(doppler configure --json | yq '.. | select(has("token"))' | yq '.token')
+  command chezmoi "$@"
+}
+{{ end }}
