@@ -107,6 +107,9 @@ export EDITOR=xed
 export VISUAL=nano
 {{ end }}
 
+# homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # Ensure symlink followed to home directory
 cd -P .
 
