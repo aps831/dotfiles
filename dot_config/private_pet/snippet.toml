@@ -2,3 +2,64 @@
   description = "Find files with name up to depth"
   command = "find . -maxdepth <depth> -type f -name '<filename>'"
   output = ""
+
+[[snippets]]
+  description = "Checkout Github pull request"
+  command = "id=\"$(gh pr list -L100 | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr checkout \"$id\""
+  output = ""
+
+[[snippets]]
+  description = "Close stale Github pull request"
+  command = "id=\"$(gh pr list -L100 | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr close \"$id\" -d -c \"Stale\""
+  output = ""
+
+[[snippets]]
+  description = "Combine Dependabot authored Github pull requests without 'no_combine_prs' label"
+  command = "gh combine-prs --query \"author:app/dependabot -label:no_combine_prs\" --skip-pr-check"
+  output = ""
+
+[[snippets]]
+  description = "Rebase Dependabot authored Github pull requests on Github"
+  command = "id=\"$(gh pr list --search \"author:app/dependabot\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr comment \"$id\" -b \"@dependabot rebase\""
+  output = ""
+
+[[snippets]]
+  description = "Rebase and merge Dependabot authored Github pull requests on Github"
+  command = "id=\"$(gh pr list --search \"author:app/dependabot\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr merge \"$id\" --rebase"
+  output = ""
+
+[[snippets]]
+  description = "Rebase and merge Dependabot authored Github pull requests locally"
+  command = "pr_branch=\"$(gh pr list --search \"author:app/dependabot\" | fzf | cut -f3)\"; [ -n \"$pr_branch\" ] && remote=$(git remote -v | grep github.com | head -n 1 | awk ''{print $1}'') && git fetch $remote $pr_branch:$pr_branch && current_branch=$(git rev-parse --abbrev-ref HEAD) && git rebase $current_branch $pr_branch && git checkout $current_branch && git merge $pr_branch"
+  output = ""
+
+[[snippets]]
+  description = "List Dependabot authored Github pull requests"
+  command = "gh pr list --author app/dependabot"
+  output = ""
+
+[[snippets]]
+  description = "List Dependabot authored Github pull requests without 'no_combine_prs' label"
+  command = "gh pr list --search \"author:app/dependabot -label:no_combine_prs\""
+  output = ""
+
+[[snippets]]
+  description = "List Dependabot authored Github pull requests with 'no_combine_prs' label"
+  command = "gh pr list --search \"author:app/dependabot label:no_combine_prs\""
+  output = ""
+
+[[snippets]]
+  description = "List Github pull requests with merge conflicts"
+  command = "gh pr status -c | grep \"Merge conflicts\""
+  output = ""
+
+[[snippets]]
+  description = "Add label 'no_combine_prs' to Github pull request"
+  command = "id=\"$(gh pr list -L100 --search \"author:app/dependabot -label:no_combine_prs\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr edit $id --add-label \"no_combine_prs\""
+  output = ""
+
+[[snippets]]
+  description = "Remove label 'no_combine_prs' from Github pull request"
+  command = "id=\"$(gh pr list -L100 --search \"author:app/dependabot label:no_combine_prs\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr edit $id --remove-label \"no_combine_prs\""
+  output = ""
+
