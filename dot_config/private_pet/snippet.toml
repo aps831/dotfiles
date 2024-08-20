@@ -1,0 +1,4 @@
+[[snippets]]
+  description = "Find files with name up to depth"
+  command = "find . -maxdepth <depth> -type f -name '<filename>'"
+  output = ""
