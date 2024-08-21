@@ -1,37 +1,43 @@
 [[snippets]]
-  description = "Find files with name <file_name> up to depth <depth>"
+  description = "Search for files with name <file_name> up to depth <depth>"
   command = "find . -maxdepth <depth> -type f -name '<file_name>'"
-  tag = ["find"]
+  tag = ["search"]
   output = ""
 
 [[snippets]]
-  description = "Find directories with name <directory_name> up to depth <depth>"
+  description = "Search for directories with name <directory_name> up to depth <depth>"
   command = "find . -maxdepth <depth> -type d -name '<directory_name>'"
-  tag = ["find"]
+  tag = ["search"]
   output = ""
 
 [[snippets]]
-  description = "Find directories contatining a directory named <directory_name> upto a depth <depth>"
+  description = "Search for directories containing a directory named <directory_name> upto a depth <depth>"
   command = "find . -maxdepth <depth> -type d -name '<directory_name>' | sed -r 's|/[^/]+$||' |sort |uniq"
-  tag = ["find"]
+  tag = ["search"]
   output = ""
 
 [[snippets]]
-  description = "Find directories contatining a file with partial name <part_file_name> upto a depth <depth>"
+  description = "Search for directories contatining a file with partial name <part_file_name> upto a depth <depth>"
   command = "find . -maxdepth <depth> -type f -name '*<part_file_name>*' | sed -r 's|/[^/]+$||' |sort |uniq"
-  tag = ["find"]
+  tag = ["search"]
   output = ""
 
 [[snippets]]
-  description = "Find and filter text containing word <word_to_search> in files matching pattern <pattern>"
-  command = "grep -rnw \"<word_to_search>\" <pattern=*/.github/workflows/>"
-  tag = ["grep"]
+  description = "Search for text <text_to_search> in files matching pattern <pattern>"
+  command = "ag \"<text_to_search>\" <pattern=*/.github/workflows/>"
+  tag = ["search"]
   output = ""
 
 [[snippets]]
-  description = "Find and highlight text <text_to_search> in a file named <file_name>"
+  description = "Search and highlight text <text_to_search> in a file named <file_name>"
   command = "grep \"^\\|<text_to_search>\" --color='always' <file_name>"
-  tag = ["grep"]
+  tag = ["search"]
+  output = ""
+
+[[snippets]]
+  description = "Search JSON file with filename <file_name> for text <text_to_search>"
+  command = "gron \"<file_name>\" | grep -F \"<text_to_search>\""
+  tag = ["search"]
   output = ""
 
 [[snippets]]
@@ -103,6 +109,18 @@
 [[snippets]]
   description = "Remove label 'no_combine_prs' from Github pull request"
   command = "id=\"$(gh pr list -L100 --search \"author:app/dependabot label:no_combine_prs\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr edit $id --remove-label \"no_combine_prs\""
+  tag = ["github"]
+  output = ""
+
+[[snippets]]
+  description = "Show diff between HEAD and previous commit"
+  command = "git diff HEAD^..HEAD"
+  tag = ["github"]
+  output = ""
+  
+[[snippets]]
+  description = "Show diff between default and current branch"
+  command = "owner_repo=$(gh repo view --json nameWithOwner --jq '.nameWithOwner'); current_branch=$(git rev-parse --abbrev-ref HEAD); default_branch=$(gh api /repos/${owner_repo} --jq '.default_branch'); git diff ${default_branch}..${current_branch}"
   tag = ["github"]
   output = ""
 
