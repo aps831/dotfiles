@@ -1,65 +1,221 @@
 [[snippets]]
-  description = "Find files with name up to depth"
-  command = "find . -maxdepth <depth> -type f -name '<filename>'"
+  description = "Find files with name <file_name> up to depth <depth>"
+  command = "find . -maxdepth <depth> -type f -name '<file_name>'"
+  tag = ["find"]
+  output = ""
+
+[[snippets]]
+  description = "Find directories with name <directory_name> up to depth <depth>"
+  command = "find . -maxdepth <depth> -type d -name '<directory_name>'"
+  tag = ["find"]
+  output = ""
+
+[[snippets]]
+  description = "Find directories contatining a directory named <directory_name> upto a depth <depth>"
+  command = "find . -maxdepth <depth> -type d -name '<directory_name>' | sed -r 's|/[^/]+$||' |sort |uniq"
+  tag = ["find"]
+  output = ""
+
+[[snippets]]
+  description = "Find directories contatining a file with partial name <part_file_name> upto a depth <depth>"
+  command = "find . -maxdepth <depth> -type f -name '*<part_file_name>*' | sed -r 's|/[^/]+$||' |sort |uniq"
+  tag = ["find"]
+  output = ""
+
+[[snippets]]
+  description = "Find and filter text containing word <word_to_search> in files matching pattern <pattern>"
+  command = "grep -rnw \"<word_to_search>\" <pattern=*/.github/workflows/>"
+  tag = ["grep"]
+  output = ""
+
+[[snippets]]
+  description = "Find and highlight text <text_to_search> in a file named <file_name>"
+  command = "grep \"^\\|<text_to_search>\" --color='always' <file_name>"
+  tag = ["grep"]
   output = ""
 
 [[snippets]]
   description = "Checkout Github pull request"
   command = "id=\"$(gh pr list -L100 | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr checkout \"$id\""
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "Close stale Github pull request"
   command = "id=\"$(gh pr list -L100 | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr close \"$id\" -d -c \"Stale\""
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "Combine Dependabot authored Github pull requests without 'no_combine_prs' label"
   command = "gh combine-prs --query \"author:app/dependabot -label:no_combine_prs\" --skip-pr-check"
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "Rebase Dependabot authored Github pull requests on Github"
   command = "id=\"$(gh pr list --search \"author:app/dependabot\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr comment \"$id\" -b \"@dependabot rebase\""
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "Rebase and merge Dependabot authored Github pull requests on Github"
   command = "id=\"$(gh pr list --search \"author:app/dependabot\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr merge \"$id\" --rebase"
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "Rebase and merge Dependabot authored Github pull requests locally"
   command = "pr_branch=\"$(gh pr list --search \"author:app/dependabot\" | fzf | cut -f3)\"; [ -n \"$pr_branch\" ] && remote=$(git remote -v | grep github.com | head -n 1 | awk ''{print $1}'') && git fetch $remote $pr_branch:$pr_branch && current_branch=$(git rev-parse --abbrev-ref HEAD) && git rebase $current_branch $pr_branch && git checkout $current_branch && git merge $pr_branch"
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "List Dependabot authored Github pull requests"
   command = "gh pr list --author app/dependabot"
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "List Dependabot authored Github pull requests without 'no_combine_prs' label"
   command = "gh pr list --search \"author:app/dependabot -label:no_combine_prs\""
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "List Dependabot authored Github pull requests with 'no_combine_prs' label"
   command = "gh pr list --search \"author:app/dependabot label:no_combine_prs\""
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "List Github pull requests with merge conflicts"
   command = "gh pr status -c | grep \"Merge conflicts\""
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "Add label 'no_combine_prs' to Github pull request"
   command = "id=\"$(gh pr list -L100 --search \"author:app/dependabot -label:no_combine_prs\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr edit $id --add-label \"no_combine_prs\""
+  tag = ["github"]
   output = ""
 
 [[snippets]]
   description = "Remove label 'no_combine_prs' from Github pull request"
   command = "id=\"$(gh pr list -L100 --search \"author:app/dependabot label:no_combine_prs\" | fzf | cut -f1)\"; [ -n \"$id\" ] && gh pr edit $id --remove-label \"no_combine_prs\""
+  tag = ["github"]
+  output = ""
+
+[[snippets]]
+  description = "Reduce quality of JPG/JPEG file"
+  command = "convert <input_file_name> -quality <quality> <output_file_name>"
+  tag = ["jpeg"]
+  output = ""
+
+[[snippets]]
+  description = "Create MP3 and FLAC from CD"
+  command = "abcde -o 'flac:-8,mp3:-b 320' -G"
+  tag = ["mp3"]
+  output = ""
+
+[[snippets]]
+  description = "Securely recursively delete current directory"
+  command = "srm -drvz *"
+  output = ""
+
+[[snippets]]
+  description = "Create a tar file"
+  command = "tar -cvf <tar_file_name> <directory_name>/*"
+  tag = ["tar"]
+  output = ""
+
+[[snippets]]
+  description = "Extract a tar file"
+  command = "tar -xvf <tar_file_name>"
+  tag = ["tar"]
+  output = ""
+
+[[snippets]]
+  description = "Download a file with wget and output to stdout"
+  command = "wget -q -O - <url>"
+  tag = ["wget"]
+  output = ""
+
+[[snippets]]
+  description = "Download a file with wget and save to a file"
+  command = "wget -q -O <file_name> <url>"
+  tag = ["wget"]
+  output = ""
+
+[[snippets]]
+  description = "Show Maven dependency tree"
+  command = "mvn dependency:tree | grep \"^\\|<search text>\" --color='always'"
+  tag = ["maven"]
+  output = ""
+
+[[snippets]]
+  description = "Show Maven vulnerabilities"
+  command = "mvn org.owasp:dependency-check-maven:check"
+  tag = ["maven"]
+  output = ""
+
+[[snippets]]
+  description = "Show Maven outdated plugin dependencies"
+  command = "mvn versions:display-plugin-updates"
+  tag = ["maven"]
+  output = ""
+
+[[snippets]]
+  description = "Show Maven outdated dependencies"
+  command = "mvn versions:display-dependency-updates"
+  tag = ["maven"]
+  output = ""
+
+[[snippets]]
+  description = "Show NPM dependency tree"
+  command = "npm ls | grep \"^\\|<search text>\" --color='always'"
+  tag = ["npm"]
+  output = ""
+
+[[snippets]]
+  description = "Show NPM vulnerabilities"
+  command = "npm audit"
+  tag = ["npm"]
+  output = ""
+
+[[snippets]]
+  description = "Show NPM outdated dependencies"
+  command = "npm outdated --include=dev"
+  tag = ["npm"]
+  output = ""
+
+[[snippets]]
+  description = "Update NPM dependency versions"
+  command = "npm update ---include=dev"
+  tag = ["npm"]
+  output = ""
+
+[[snippets]]
+  description = "Show Poetry dependency tree"
+  command = "poetry show --tree | grep \"^\\|<search text>\" --color='always'"
+  tag = ["poetry"]
+  output = ""
+
+[[snippets]]
+  description = "Show Poetry vulnerabilities"
+  command = "bash -c \"poetry run pip-audit -r <(poetry export -f requirements.txt)\""
+  tag = ["poetry"]
+  output = ""
+
+[[snippets]]
+  description = "Show Poetry outdated dependencies"
+  command = "poetry show --outdated"
+  tag = ["poetry"]
+  output = ""
+
+[[snippets]]
+  description = "Update Poetry dependency versions"
+  command = "poetry update"
+  tag = ["poetry"]
   output = ""
 
