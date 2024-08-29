@@ -108,7 +108,9 @@ export VISUAL=nano
 {{ end }}
 
 # homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [ -d "/home/linuxbrew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # Ensure symlink followed to home directory
 cd -P .
