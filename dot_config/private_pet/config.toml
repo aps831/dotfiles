@@ -1,5 +1,5 @@
 [General]
-  snippetfile = "/home/andrew/.config/pet/snippet.toml"
+  snippetfile = "~/.config/pet/snippet.toml"
   editor = "xed"
   column = 40
   selectcmd = "fzf"
