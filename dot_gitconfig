@@ -22,6 +22,11 @@
 [diff]
 	colorMoved = default
 	algorithm = histogram
+	tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
 [init]
 	defaultBranch = master
 [merge]
