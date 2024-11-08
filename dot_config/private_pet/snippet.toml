@@ -117,10 +117,22 @@
   command = "git diff HEAD^..HEAD"
   tag = ["github"]
   output = ""
+
+[[snippets]]
+  description = "Show diff with difftool between HEAD and previous commit"
+  command = "git difftool HEAD^..HEAD"
+  tag = ["github"]
+  output = ""
   
 [[snippets]]
   description = "Show diff between default and current branch"
   command = "owner_repo=$(gh repo view --json nameWithOwner --jq '.nameWithOwner'); current_branch=$(git rev-parse --abbrev-ref HEAD); default_branch=$(gh api /repos/${owner_repo} --jq '.default_branch'); git diff ${default_branch}..${current_branch}"
+  tag = ["github"]
+  output = ""
+
+[[snippets]]
+  description = "Show diff with difftool between default and current branch"
+  command = "owner_repo=$(gh repo view --json nameWithOwner --jq '.nameWithOwner'); current_branch=$(git rev-parse --abbrev-ref HEAD); default_branch=$(gh api /repos/${owner_repo} --jq '.default_branch'); git difftool ${default_branch}..${current_branch}"
   tag = ["github"]
   output = ""
 
