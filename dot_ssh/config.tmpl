@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.hostname "titan" -}}
+{{- if eq .hostname "titan" -}}
 Host thor.local
   User andrew
   IdentityFile ~/.ssh/andrew_on_titan_for_thor_using_sk_15790882
@@ -28,7 +28,7 @@ Host bitbucket.org
 Host github.com
   IdentityFile ~/.ssh/andrew_on_titan_for_github_using_sk_15790882
   IdentitiesOnly yes
-{{- else if eq .chezmoi.hostname "thor" -}}
+{{- else if eq .hostname "thor" -}}
 Host titan.local
   User andrew
   IdentityFile ~/.ssh/andrew_on_thor_for_titan_using_sk_15790882

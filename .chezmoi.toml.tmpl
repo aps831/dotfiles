@@ -7,6 +7,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
     name = "Your name"
     codespaces = {{ $codespaces }}
     devcontainers = {{ $devcontainers }}
+    hostname = {{ output "hostname" | trim | quote }}
 
 [diff]
     exclude = ["scripts"]
