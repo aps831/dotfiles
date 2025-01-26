@@ -20,4 +20,4 @@ cosign system
 packer system
 android-sdk system
 tailwindcss system
-asdf-plugin-manager 0ef4f9e
+asdf-plugin-manager 1.3.1
