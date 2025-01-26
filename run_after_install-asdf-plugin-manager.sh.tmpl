@@ -1,5 +1,5 @@
 #! /bin/bash
-{{- if (or .devcontainers .codespaces) }}
+{{- if and (not .devcontainers) (not .codespaces) }}
 asdf install asdf-plugin-manager
 asdf-plugin-manager add-all
 {{- end }}
