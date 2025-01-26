@@ -13,6 +13,7 @@ install.sh
 .config/Yubico/YKPersonalization.conf 
 .config/Yubico/Yubico Authenticator.conf
 .docker/
+.profile.d/java.sh
 .gnupg/
 .ngrok2/
 .gradle/
@@ -20,4 +21,6 @@ install.sh
 .sdkman/
 .ssh/
 .all-repos.json
+.tool-versions
+.plugin-versions
 {{- end }}
