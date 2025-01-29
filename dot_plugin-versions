@@ -1,5 +1,6 @@
 android-sdk          https://github.com/huffduff/asdf-android-sdk.git           6eaee0c
 asdf-plugin-manager  https://github.com/asdf-community/asdf-plugin-manager.git  0ef4f9e
+asdf-plugin-manager  https://github.com/asdf-community/asdf-plugin-manager.git  0ef4f9e
 bazel                https://github.com/mrinalwadhwa/asdf-bazel.git             f831000
 checkov              https://github.com/bosmak/asdf-checkov.git                 08104c7
 cosign               https://gitlab.com/wt0f/asdf-cosign                        746596f
@@ -24,3 +25,4 @@ task                 https://github.com/particledecay/asdf-task.git             
 terraform            https://github.com/asdf-community/asdf-hashicorp.git       22eb1c4
 tfsec                https://github.com/woneill/asdf-tfsec.git                  b73563c
 trivy                https://github.com/zufardhiyaulhaq/asdf-trivy.git          537a22a
+ruby                 https://github.com/asdf-vm/asdf-ruby.git                   a76d00b
