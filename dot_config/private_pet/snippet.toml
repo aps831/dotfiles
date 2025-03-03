@@ -115,13 +115,13 @@
 [[snippets]]
   description = "Show diff between HEAD and previous commit"
   command = "git diff HEAD^..HEAD"
-  tag = ["github"]
+  tag = ["git"]
   output = ""
 
 [[snippets]]
   description = "Show diff with difftool between HEAD and previous commit"
   command = "git difftool HEAD^..HEAD"
-  tag = ["github"]
+  tag = ["git"]
   output = ""
   
 [[snippets]]
