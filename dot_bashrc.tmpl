@@ -107,11 +107,6 @@ export EDITOR=xed
 export VISUAL=nano
 {{ end }}
 
-# homebrew
-if [ -d "/home/linuxbrew" ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
 # Ensure symlink followed to home directory
 cd -P .
 
