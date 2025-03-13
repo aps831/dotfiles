@@ -81,6 +81,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
 # Source user profiles
 if [ -d $HOME/.profile.d ]; then
   for f in $HOME/.profile.d/*.sh
