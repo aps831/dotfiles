@@ -1,6 +1,6 @@
 android-sdk          https://github.com/huffduff/asdf-android-sdk.git           6eaee0c
 asdf-plugin-manager  https://github.com/asdf-community/asdf-plugin-manager.git  0ef4f9e
-asdf-plugin-manager  https://github.com/asdf-community/asdf-plugin-manager.git  0ef4f9e
+auth0-cli            https://github.com/gunzy83/asdf-auth0-cli.git              ff4b435
 bazel                https://github.com/mrinalwadhwa/asdf-bazel.git             f831000
 checkov              https://github.com/bosmak/asdf-checkov.git                 08104c7
 cosign               https://gitlab.com/wt0f/asdf-cosign                        746596f
