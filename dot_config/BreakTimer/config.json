@@ -3,22 +3,72 @@
 		"autoLaunch": true,
 		"breaksEnabled": true,
 		"notificationType": "POPUP",
-		"breakFrequency": "1899-12-31T00:55:00.000Z",
-		"breakLength": "1899-12-31T00:05:00.000Z",
-		"postponeLength": "1899-12-31T00:03:00.000Z",
 		"postponeLimit": 0,
 		"workingHoursEnabled": true,
-		"workingHoursFrom": "1899-12-31T07:00:00.000Z",
-		"workingHoursTo": "1899-12-31T23:00:00.000Z",
-		"workingHoursMonday": true,
-		"workingHoursTuesday": true,
-		"workingHoursWednesday": true,
-		"workingHoursThursday": true,
-		"workingHoursFriday": true,
-		"workingHoursSaturday": true,
-		"workingHoursSunday": true,
+		"workingHoursMonday": {
+			"enabled": true,
+			"ranges": [
+				{
+					"fromMinutes": 420,
+					"toMinutes": 1380
+				}
+			]
+		},
+		"workingHoursTuesday": {
+			"enabled": true,
+			"ranges": [
+				{
+					"fromMinutes": 420,
+					"toMinutes": 1380
+				}
+			]
+		},
+		"workingHoursWednesday": {
+			"enabled": true,
+			"ranges": [
+				{
+					"fromMinutes": 420,
+					"toMinutes": 1380
+				}
+			]
+		},
+		"workingHoursThursday": {
+			"enabled": true,
+			"ranges": [
+				{
+					"fromMinutes": 420,
+					"toMinutes": 1380
+				}
+			]
+		},
+		"workingHoursFriday": {
+			"enabled": true,
+			"ranges": [
+				{
+					"fromMinutes": 420,
+					"toMinutes": 1380
+				}
+			]
+		},
+		"workingHoursSaturday": {
+			"enabled": true,
+			"ranges": [
+				{
+					"fromMinutes": 420,
+					"toMinutes": 1380
+				}
+			]
+		},
+		"workingHoursSunday": {
+			"enabled": true,
+			"ranges": [
+				{
+					"fromMinutes": 420,
+					"toMinutes": 1380
+				}
+			]
+		},
 		"idleResetEnabled": true,
-		"idleResetLength": "1899-12-31T00:05:00.000Z",
 		"idleResetNotification": false,
 		"gongEnabled": true,
 		"breakTitle": "Time for a break!",
@@ -28,7 +78,13 @@
 		"endBreakEnabled": true,
 		"skipBreakEnabled": true,
 		"postponeBreakEnabled": true,
-		"notificationClick": "POSTPONE"
+		"notificationClick": "POSTPONE",
+		"breakFrequencySeconds": 3300,
+		"breakLengthSeconds": 300,
+		"postponeLengthSeconds": 180,
+		"idleResetLengthSeconds": 300
 	},
-	"appInitialized": true
+	"appInitialized": true,
+	"settingsVersion": 2,
+	"disableEndTime": null
 }
