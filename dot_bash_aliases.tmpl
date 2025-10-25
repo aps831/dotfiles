@@ -81,3 +81,8 @@ function pet-select() {
 }
 bind -x '"\C-x\C-r": pet-select'
 
+# cd
+cd() {
+  command cd -P "$@"
+}
+
