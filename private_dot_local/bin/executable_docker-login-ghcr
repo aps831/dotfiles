@@ -1,0 +1,18 @@
+#!/bin/bash
+
+SCOPES="delete:packages,write:packages"
+DESCRIPTION="docker_cli_$(hostname)_delete_write_packages"
+EXPIRES="365" # This doesn't seem to work
+
+xdg-open "https://github.com/settings/tokens/"
+echo "Opening GitHub token page. Delete the token '${DESCRIPTION}'"
+read -n 1 -r -s -p "Press any key to continue..."
+echo ""
+
+xdg-open "https://github.com/settings/tokens/new?scopes=${SCOPES}&description=${DESCRIPTION}&expires_in=${EXPIRES}"
+echo "Opening GitHub token creation page with ${SCOPES} scopes..."
+
+read -sp "Enter the personal access token: " -r token
+echo ""
+
+echo ${token} | docker login ghcr.io -u aps831 --password-stdin
