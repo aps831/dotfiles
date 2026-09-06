@@ -190,3 +190,9 @@ local.properties
 
 # Direnv
 .envrc
+
+# Codex
+.codex/
+
+# Agents
+.agents/
